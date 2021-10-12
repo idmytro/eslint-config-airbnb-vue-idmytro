@@ -56,6 +56,10 @@ module.exports = {
         'model',
         ['props', 'propsData'],
         'fetch',
+
+        'emits', // for Vue.js 3.x
+        'setup', // for Vue 3.x
+
         'asyncData',
         'data',
         'computed',
