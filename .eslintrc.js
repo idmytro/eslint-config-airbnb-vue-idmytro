@@ -32,12 +32,8 @@ module.exports = {
       },
     ],
     'import/extensions': ['error', 'always', {
-      js: 'never',
-      mjs: 'never',
-      jsx: 'never',
-      ts: 'never',
-      tsx: 'never',
-      vue: 'off', // ? FIXME
+      js: 'never', // ? never
+      vue: 'never',
     }],
     'newline-per-chained-call': [2, { ignoreChainWithDepth: 1 }],
     'max-len': 'off',
@@ -62,7 +58,7 @@ module.exports = {
 
     'vue/component-name-in-template-casing': [
       'error',
-      'kebab-case',
+      'PascalCase', // or 'kebab-case',
       {
         registeredComponentsOnly: true,
         ignores: [],
@@ -100,6 +96,10 @@ module.exports = {
       ignoreRegExpLiterals: false,
       ignoreHTMLAttributeValues: true,
       ignoreHTMLTextContents: false,
+    }],
+    'vue/match-component-file-name': ['error', {
+      extensions: ['vue'],
+      shouldMatchCase: true,
     }],
     'vue/order-in-components': [
       'error',
@@ -139,7 +139,6 @@ module.exports = {
         groups: ['props', 'data', 'computed', 'methods'],
       },
     ],
-    'vue/no-v-html': 'off',
     'vue/prefer-template': 'error',
   },
 };

@@ -1,14 +1,18 @@
 <template>
   <div>
-    123
+    <AppChild class="AppChild" />
   </div>
 </template>
 
 <script>
+// import h from './helper';
+import AppChild from './AppChild';
+
 // const a = 'A';
 
 export default {
-  name: 'App',
+  name: 'AppHome',
+  components: { AppChild },
   props: {
     // o: {
     //   type: Object,
