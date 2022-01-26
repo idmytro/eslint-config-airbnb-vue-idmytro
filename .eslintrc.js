@@ -1,9 +1,12 @@
 module.exports = {
   env: {
     browser: true,
+    node: true,
+    'jest/globals': true,
   },
   extends: [
     'plugin:compat/recommended',
+    'plugin:jsdoc/recommended',
     'plugin:promise/recommended',
     'plugin:vue/recommended',
     '@vue/airbnb',
@@ -11,7 +14,12 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 11,
   },
-  plugins: ['vue', 'promise'],
+  plugins: [
+    'jest',
+    'jsdoc',
+    'promise',
+    'vue',
+  ],
   rules: {
     'comma-dangle': [
       'error',
@@ -23,9 +31,34 @@ module.exports = {
         functions: 'always-multiline',
       },
     ],
+    'import/extensions': ['error', 'always', {
+      js: 'never',
+      mjs: 'never',
+      jsx: 'never',
+      ts: 'never',
+      tsx: 'never',
+      vue: 'off', // ? FIXME
+    }],
     'newline-per-chained-call': [2, { ignoreChainWithDepth: 1 }],
-    'no-prototype-builtins': 'off',
+    'max-len': 'off',
+    'no-param-reassign': [
+      'error',
+      {
+        props: true,
+        ignorePropertyModificationsFor: [
+          'state',
+        ],
+      },
+    ],
     'prefer-template': 'error',
+    'space-before-function-paren': [
+      'error',
+      {
+        anonymous: 'always',
+        named: 'always',
+        asyncArrow: 'always',
+      },
+    ],
 
     'vue/component-name-in-template-casing': [
       'error',
@@ -47,12 +80,27 @@ module.exports = {
         html: {
           void: 'never',
           normal: 'never',
-          component: 'never',
+          component: 'always',
         },
         svg: 'always',
         math: 'always',
       },
     ],
+    'vue/max-len': ['error', {
+      code: 150,
+      template: 150,
+      tabWidth: 2,
+      comments: 150,
+      ignorePattern: '',
+      ignoreComments: false,
+      ignoreTrailingComments: false,
+      ignoreUrls: false,
+      ignoreStrings: false,
+      ignoreTemplateLiterals: false,
+      ignoreRegExpLiterals: false,
+      ignoreHTMLAttributeValues: true,
+      ignoreHTMLTextContents: false,
+    }],
     'vue/order-in-components': [
       'error',
       {
@@ -80,8 +128,8 @@ module.exports = {
           'data',
           'computed',
           'watch',
-          'LIFECYCLE_HOOKS',
           'methods',
+          'LIFECYCLE_HOOKS',
         ],
       },
     ],
