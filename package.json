@@ -20,6 +20,7 @@
   "author": "Dmytro Cisar <dmytro.cisar@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@vue/cli-service": "^4.5.15",
     "@vue/eslint-config-airbnb": "^6.0.0",
     "eslint": "^8.7.0",
     "eslint-plugin-compat": "^4.0.1",

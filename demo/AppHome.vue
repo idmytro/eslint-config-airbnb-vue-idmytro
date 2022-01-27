@@ -1,3 +1,4 @@
+import AppChild from './AppChild.vue';
 <template>
   <div>
     <AppChild class="AppChild" />
@@ -5,24 +6,11 @@
 </template>
 
 <script>
+import AppChild from './AppChild.vue';
 // import h from './helper';
-import AppChild from './AppChild';
-
-// const a = 'A';
 
 export default {
   name: 'AppHome',
   components: { AppChild },
-  props: {
-    // o: {
-    //   type: Object,
-    //   default: () => ({}),
-    // },
-  },
-  data () {
-    return {
-      // b: 'B',
-    };
-  },
 };
 </script>

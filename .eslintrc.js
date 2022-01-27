@@ -11,9 +11,9 @@ module.exports = {
     'plugin:vue/recommended',
     '@vue/airbnb',
   ],
-  parserOptions: {
-    ecmaVersion: 11,
-  },
+  // parserOptions: {
+  //   ecmaVersion: 11,
+  // },
   plugins: [
     'jest',
     'jsdoc',
@@ -31,10 +31,6 @@ module.exports = {
         functions: 'always-multiline',
       },
     ],
-    'import/extensions': ['error', 'always', {
-      js: 'never', // ? never
-      vue: 'never',
-    }],
     'newline-per-chained-call': [2, { ignoreChainWithDepth: 1 }],
     'max-len': 'off',
     'no-param-reassign': [
@@ -56,9 +52,24 @@ module.exports = {
       },
     ],
 
+    // https://youtrack.jetbrains.com/issue/WEB-48458
+    // https://youtrack.jetbrains.com/issue/WEB-53257
+    /*
+    vs-code settings.json
+    "path-intellisense.extensionOnImport": true
+    "path-autocomplete.extensionOnImport": true,
+
+    https://github.com/vuejs/vetur/pull/2930
+    https://github.com/vuejs/vetur/commit/4b4f94c486c60112bce59e73288b2f3b41ce96cb
+    */
+    'import/extensions': ['error', 'always', {
+      js: 'never', // ? always
+      // vue: 'never',
+    }],
+
     'vue/component-name-in-template-casing': [
       'error',
-      'PascalCase', // or 'kebab-case',
+      'PascalCase', // ? 'kebab-case',
       {
         registeredComponentsOnly: true,
         ignores: [],
