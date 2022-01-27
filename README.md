@@ -16,7 +16,8 @@ eslint-plugin-promise@^6.0.0 \
 eslint-plugin-vue@^8.3.0 \
 eslint-plugin-vuejs-accessibility@^1.1.1 \
 @babel/eslint-parser@^7.16.5 \
-@babel/core@^7.16.12
+@babel/core@^7.16.12 \
+@vue/cli-plugin-babel@^4.5.15
 ```
 
 ## Usage
