@@ -10,7 +10,7 @@ import AppChild from './AppChild.vue';
 // import h from './helper';
 
 export default {
-  name: 'AppHome',
+  name: 'Home',
   components: { AppChild },
 };
 </script>

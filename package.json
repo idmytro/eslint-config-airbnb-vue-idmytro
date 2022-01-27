@@ -4,7 +4,8 @@
   "description": "An ESLint shareable config for Vue.js projects",
   "main": ".eslintrc.js",
   "scripts": {
-    "lint": "eslint .eslintrc.js"
+    "lint": "eslint .eslintrc.js",
+    "demo": "eslint --ext .js,.vue demo"
   },
   "repository": {
     "type": "git",
