@@ -1,1 +1,3 @@
-import a from './helper.js';
+const a = { b: 'C' };
+
+export default a?.b;

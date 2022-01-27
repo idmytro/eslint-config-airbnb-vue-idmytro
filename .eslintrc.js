@@ -11,9 +11,7 @@ module.exports = {
     'plugin:vue/recommended',
     '@vue/airbnb',
   ],
-  // parserOptions: {
-  //   ecmaVersion: 11,
-  // },
+  parser: '@babel/eslint-parser',
   plugins: [
     'jest',
     'jsdoc',
